@@ -18,4 +18,9 @@ public class SupeoForumApplication {
         return "data 2";
     }
 
+    @GetMapping("admin/product")
+    public String product() {
+        return "show product";
+    }
+
 }
