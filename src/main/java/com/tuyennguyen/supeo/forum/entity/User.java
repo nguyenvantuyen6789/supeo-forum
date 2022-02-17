@@ -24,6 +24,18 @@ public class User {
     private String password;
 
     @Column(nullable = true)
+    private String fullName;
+
+    @Column(nullable = false)
+    private String email;
+
+    @Column(nullable = false)
+    private String gender;
+
+    @Column(nullable = true)
+    private String address;
+
+    @Column(nullable = true)
     private String roles;
 
     @Column(nullable = true)
