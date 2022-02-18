@@ -1,6 +1,6 @@
 package com.tuyennguyen.supeo.forum.service;
 
-import com.tuyennguyen.supeo.forum.entity.MyUserDetails;
+import com.tuyennguyen.supeo.forum.entity.UserDetailsSpringFW;
 import com.tuyennguyen.supeo.forum.entity.User;
 import com.tuyennguyen.supeo.forum.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class MyUserDetailsService implements UserDetailsService {
+public class UserDetailsSpringFWService implements UserDetailsService {
 
     @Autowired
     UserRepository userRepo;
@@ -21,7 +21,9 @@ public class MyUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> user = userRepo.findByUsername(username);
         user.orElseThrow(() -> new UsernameNotFoundException("Not found: " + username));
-        return user.map(MyUserDetails::new).get();
+        new UserDetailsSpringFW(user.get());
+//        return user.map(UserDetailsSpringFW::new).get();
+        return new UserDetailsSpringFW(user.get());
     }
 
 }
