@@ -15,5 +15,14 @@
         <div th:insert="admin/user/user-edit.html::#user-edit"></div>
     </div>
 
+    <!-- product -->
+    <div th:switch="${page}" th:case="product">
+        <div th:insert="admin/product/product.html::#list-product"></div>
+    </div>
+    <!-- product edit -->
+    <div th:switch="${page}" th:case="product-edit">
+        <div th:insert="admin/product/product-edit.html::#product-edit"></div>
+    </div>
+
 </body>
 </html>

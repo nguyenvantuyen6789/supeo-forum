@@ -13,14 +13,4 @@ public class SupeoForumApplication {
         SpringApplication.run(SupeoForumApplication.class, args);
     }
 
-    @GetMapping("show")
-    public String showData() {
-        return "data 2";
-    }
-
-    @GetMapping("admin/product")
-    public String product() {
-        return "show product";
-    }
-
 }

@@ -39,14 +39,12 @@
                 </td>
 
                 <td class="paTo9 paBo9 foSi13">
-                    <a class=" icon-action maRi10" th:href="@{/admin/user/edit/{userId}(userId=${obj.userId})}" title="edit">
+                    <a class=" icon-action maRi10" th:href="@{/admin/user/edit/{userId}(userId=${obj.userId})}">
                         Edit
-                        <i class="fas fa-edit"></i>
                     </a>
 
-                    <a class="icon-action cuPo" data-toggle="modal" data-target="#delete-data-modal" th:attr='onclick=|showModal("/admin/user/delete/" + ${obj.userId})|' title="delete">
+                    <a class="icon-action cuPo" th:href="@{/admin/user/delete/{userId}(userId=${obj.userId})}">
                         Xoá
-                        <i class="far fa-trash-alt"></i>
                     </a>
                 </td>
 
